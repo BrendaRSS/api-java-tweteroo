@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,5 +50,11 @@ public class TweetController {
     public ResponseEntity<Object> getTweetByAuthorId(@PathVariable Long authorId){
         List<TweetModel> tweets = tweetService.finByAuthorId(authorId);
         return ResponseEntity.status(HttpStatus.OK).body(tweets);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTweet(@PathVariable Long id){
+        tweetService.deleteById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

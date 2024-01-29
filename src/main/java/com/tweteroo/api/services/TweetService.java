@@ -42,4 +42,8 @@ public class TweetService {
     public List<TweetModel> finByAuthorId(Long authorId){
         return tweetRepository.findByAuthorId(authorId);
     }
+
+    public void deleteById(Long id){
+        tweetRepository.deleteById(id);
+    }
 }
