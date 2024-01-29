@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,6 +42,12 @@ public class TweetController {
     @GetMapping
     public ResponseEntity<List<TweetModel>> getTweets(){
         List<TweetModel> tweets = tweetService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(tweets);
+    }
+
+    @GetMapping("/user/{authorId}")
+    public ResponseEntity<Object> getTweetByAuthorId(@PathVariable Long authorId){
+        List<TweetModel> tweets = tweetService.finByAuthorId(authorId);
         return ResponseEntity.status(HttpStatus.OK).body(tweets);
     }
 }
