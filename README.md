@@ -6,7 +6,7 @@ This repository contains an api of a tweeting application using Java Spring. To 
 1. Clone the repository:
 
 ```bash
-git clone git@github.com:BrendaRSS/teamDrawerApi.git
+git clone git@github.com:BrendaRSS/api-java-tweteroo.git
 ```
 
 2. Install dependencies with Maven
