@@ -34,6 +34,6 @@ public class UserModel {
     @Column(nullable = false)
     private String avatar;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 30, unique = true)
     private String username;
 }
