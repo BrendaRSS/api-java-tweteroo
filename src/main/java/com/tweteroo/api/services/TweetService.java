@@ -1,5 +1,6 @@
 package com.tweteroo.api.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
@@ -32,5 +33,9 @@ public class TweetService {
         TweetModel tweet = new TweetModel(bodyDto, user.get());
         return Optional.of(tweetRepository.save(tweet));
 
+    }
+
+    public List<TweetModel> findAll(){
+        return tweetRepository.findAll();
     }
 }
