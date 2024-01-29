@@ -1,4 +1,4 @@
-# Team Drawer
+# API Tweetero
 This repository contains an api of a tweeting application using Java Spring. To persist the data I used the postgreSQL database.
 
 ## Installation
